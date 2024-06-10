@@ -23,6 +23,9 @@
     <ClInclude Include="cuda_kernel.cuh">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="lbm_constants.cuh">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda_summation_test.cu">
