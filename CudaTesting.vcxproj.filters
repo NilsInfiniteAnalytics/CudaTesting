@@ -28,7 +28,7 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="cuda_summation_test.cu">
+    <CudaCompile Include="cuda_methods.cu">
       <Filter>Source Files</Filter>
     </CudaCompile>
   </ItemGroup>

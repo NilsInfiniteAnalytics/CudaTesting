@@ -135,7 +135,7 @@
     <ClInclude Include="lbm_constants.cuh" />
   </ItemGroup>
   <ItemGroup>
-    <CudaCompile Include="cuda_summation_test.cu" />
+    <CudaCompile Include="cuda_methods.cu" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
