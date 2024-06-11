@@ -25,6 +25,16 @@ int main()
 
 	size_t size = nx * ny * sizeof(float) * NL;
 
+	if(size > prop.totalGlobalMem) {
+		std::cerr << "The size of the distribution functions is too large for the device." << std::endl;
+		return 1;
+	}
+
+	if(size < prop.totalGlobalMem) {
+		std::cout << "The size of the required memory is " << size << " bytes." << std::endl;
+		std::cout << "The size of the distribution functions is less than the total global memory by " << prop.totalGlobalMem - size << " bytes." << std::endl;
+	}
+
 	float* device_f;
 	cudaMalloc(&device_f, size);
 
@@ -33,13 +43,6 @@ int main()
 	float* local_f = static_cast<float*>(malloc(size));
 	cudaMemcpy(local_f, device_f, size, cudaMemcpyDeviceToHost);
 
-	for (int y = 0; y < ny; y++) {
-		for (int x = 0; x < nx; x++) {
-			const int idx = (y * nx + x) * NL;
-			std::cout << local_f[idx] << " ";
-		}
-		std::cout << std::endl;
-	}
 
 	free(local_f);
 	cudaFree(device_f);

@@ -5,8 +5,8 @@
 
 
 // Grid and Block dimensions
-#define NX 12
-#define NY 12
+#define NX 1024
+#define NY 1024
 #define NL 9
 
 // Lattice speeds and weight for D2Q9
